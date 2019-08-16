@@ -70,7 +70,7 @@ func main() {
 						dataType = "boolean"
 					}
 
-					outputString += "\t" + entityData.Name + ": " + dataType + "\n"
+					outputString += "\t" + entityData.Name + ": " + dataType + ";\n"
 				}
 
 				outputString += "}" + "\n\n"
