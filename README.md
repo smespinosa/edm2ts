@@ -28,25 +28,25 @@ export interface Product {
 	DiscontinuedDate: string | null;
 	Rating: string;
 	Price: string;
-	Categories: Category[] | null;
-	Supplier: Supplier | null;
-	ProductDetail: ProductDetail | null;
+	Categories?: Category[];
+	Supplier?: Supplier;
+	ProductDetail?: ProductDetail;
 }
 
 export interface FeaturedProduct {
-	Advertisement: Advertisement | null;
+	Advertisement?: Advertisement;
 }
 
 export interface ProductDetail {
 	ProductID: number;
 	Details: string | null;
-	Product: Product | null;
+	Product?: Product;
 }
 
 export interface Category {
 	ID: number;
 	Name: string | null;
-	Products: Product[] | null;
+	Products?: Product[];
 }
 
 export interface Supplier {
@@ -55,13 +55,13 @@ export interface Supplier {
 	Address: string | null;
 	Location: string | null;
 	Concurrency: number;
-	Products: Product[] | null;
+	Products?: Product[];
 }
 
 export interface Person {
 	ID: number;
 	Name: string | null;
-	PersonDetail: PersonDetail | null;
+	PersonDetail?: PersonDetail;
 }
 
 export interface Customer {
@@ -81,14 +81,14 @@ export interface PersonDetail {
 	Phone: string | null;
 	Address: string | null;
 	Photo: string;
-	Person: Person | null;
+	Person?: Person;
 }
 
 export interface Advertisement {
 	ID: string;
 	Name: string | null;
 	AirDate: string;
-	FeaturedProduct: FeaturedProduct | null;
+	FeaturedProduct?: FeaturedProduct;
 }
 ```
 

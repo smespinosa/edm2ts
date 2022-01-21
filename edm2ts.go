@@ -101,7 +101,7 @@ func main() {
 						navigationPropertyType = navigationPropertyType[0:len(navigationPropertyType)-1] + "[]"
 					}
 
-					newNavigrationProperty := "\t" + navigationData.Name + ": " + navigationPropertyType + " | null;\n"
+					newNavigrationProperty := "\t" + navigationData.Name + "?: " + navigationPropertyType + ";\n"
 
 					outputString += newNavigrationProperty
 				}
