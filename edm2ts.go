@@ -70,6 +70,10 @@ func main() {
 						dataType = "number"
 					case "Edm.Boolean":
 						dataType = "boolean"
+					case "Edm.DateTimeOffset":
+						dataType = "Date"
+					case "Edm.DateTime":
+						dataType = "Date"
 					}
 
 					//if nullable is not specified it is implied nullable

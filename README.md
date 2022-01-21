@@ -24,8 +24,8 @@ export interface Product {
 	ID: number;
 	Name: string | null;
 	Description: string | null;
-	ReleaseDate: string;
-	DiscontinuedDate: string | null;
+	ReleaseDate: Date;
+	DiscontinuedDate: Date | null;
 	Rating: string;
 	Price: string;
 	Categories?: Category[];
@@ -70,7 +70,7 @@ export interface Customer {
 
 export interface Employee {
 	EmployeeID: number;
-	HireDate: string;
+	HireDate: Date;
 	Salary: string;
 }
 
@@ -87,7 +87,7 @@ export interface PersonDetail {
 export interface Advertisement {
 	ID: string;
 	Name: string | null;
-	AirDate: string;
+	AirDate: Date;
 	FeaturedProduct?: FeaturedProduct;
 }
 ```
