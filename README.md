@@ -91,6 +91,3 @@ export interface Advertisement {
 	FeaturedProduct?: FeaturedProduct;
 }
 ```
-
-## Todo
-Resolve complex types to correct class
