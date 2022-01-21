@@ -7,7 +7,6 @@ import (
 type Edmx struct {
 	XMLName      xml.Name      `xml:"Edmx"`
 	DataServices []DataService `xml:"DataServices"`
-	edmx         string        `xml:"xmlns,attr"`
 	Version      string        `xml:"Version,attr"`
 }
 
@@ -39,10 +38,11 @@ type EntitySet struct {
 }
 
 type EntityType struct {
-	XMLName    xml.Name   `xml:"EntityType"`
-	Key        EntityKey  `xml:"Key"`
-	Name       string     `xml:"Name,attr"`
-	Properties []Property `xml:"Property"`
+	XMLName            xml.Name             `xml:"EntityType"`
+	Key                EntityKey            `xml:"Key"`
+	Name               string               `xml:"Name,attr"`
+	Properties         []Property           `xml:"Property"`
+	NavigationProperty []NavigationProperty `xml:"NavigationProperty"`
 }
 
 type EntityKey struct {
@@ -60,4 +60,10 @@ type Property struct {
 	Name     string   `xml:"Name,attr"`
 	Type     string   `xml:"Type,attr"`
 	Nullable string   `xml:"Nullable,attr"`
+}
+
+type NavigationProperty struct {
+	XMLName xml.Name `xml:"NavigationProperty"`
+	Name    string   `xml:"Name,attr"`
+	Type    string   `xml:"Type,attr"`
 }
