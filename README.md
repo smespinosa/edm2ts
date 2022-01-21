@@ -17,70 +17,79 @@ edm2ts https://api.somesite.com/odata/$metadata odataclasses.ts
 ```
 
 ## Sample output
-Generated from https://services.odata.org/V3/(S(jhv0jsgccuohvw4uwoaq3nzo))/OData/OData.svc/$metadata
+Generated from https://services.odata.org/V4/(S(jhv0jsgccuohvw4uwoaq3nzo))/OData/OData.svc/$metadata
 
 ```
-export class Product {
-	ID: number
-	Name: string
-	Description: string
-	ReleaseDate: string
-	DiscontinuedDate: string
-	Rating: string
-	Price: string
+export interface Product {
+	ID: number;
+	Name: string | null;
+	Description: string | null;
+	ReleaseDate: string;
+	DiscontinuedDate: string | null;
+	Rating: string;
+	Price: string;
+	Categories: Category[] | null;
+	Supplier: Supplier | null;
+	ProductDetail: ProductDetail | null;
 }
 
-export class FeaturedProduct {
+export interface FeaturedProduct {
+	Advertisement: Advertisement | null;
 }
 
-export class ProductDetail {
-	ProductID: number
-	Details: string
+export interface ProductDetail {
+	ProductID: number;
+	Details: string | null;
+	Product: Product | null;
 }
 
-export class Category {
-	ID: number
-	Name: string
+export interface Category {
+	ID: number;
+	Name: string | null;
+	Products: Product[] | null;
 }
 
-export class Supplier {
-	ID: number
-	Name: string
-	Address: string
-	Location: string
-	Concurrency: number
+export interface Supplier {
+	ID: number;
+	Name: string | null;
+	Address: string | null;
+	Location: string | null;
+	Concurrency: number;
+	Products: Product[] | null;
 }
 
-export class Person {
-	ID: number
-	Name: string
+export interface Person {
+	ID: number;
+	Name: string | null;
+	PersonDetail: PersonDetail | null;
 }
 
-export class Customer {
-	TotalExpense: number
+export interface Customer {
+	TotalExpense: number;
 }
 
-export class Employee {
-	EmployeeID: number
-	HireDate: string
-	Salary: string
+export interface Employee {
+	EmployeeID: number;
+	HireDate: string;
+	Salary: string;
 }
 
-export class PersonDetail {
-	PersonID: number
-	Age: string
-	Gender: boolean
-	Phone: string
-	Address: string
-	Photo: string
+export interface PersonDetail {
+	PersonID: number;
+	Age: string;
+	Gender: boolean;
+	Phone: string | null;
+	Address: string | null;
+	Photo: string;
+	Person: Person | null;
 }
 
-export class Advertisement {
-	ID: string
-	Name: string
-	AirDate: string
+export interface Advertisement {
+	ID: string;
+	Name: string | null;
+	AirDate: string;
+	FeaturedProduct: FeaturedProduct | null;
 }
-
 ```
 
 ## Todo
